@@ -3,10 +3,25 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://biowasm.com/cdn/v3/aioli.js"></script>
 	<title>Toblerone</title>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="css/material.min.css">
 	<link rel="stylesheet" href="css/style.css">
+
+	<script>
+  let a;
+  window.addEventListener('DOMContentLoaded', async () => {
+    a = await new Aioli(["toblerone", "samtools"]);
+    log("BioWasm environment loaded. Ready.");
+  });
+
+  function log(msg) {
+    const el = document.getElementById("log");
+    el.textContent += msg + "\n";
+  }
+</script>
+	
 </head>
 
 <body>
